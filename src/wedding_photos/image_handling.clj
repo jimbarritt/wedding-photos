@@ -12,7 +12,8 @@
 ;;https://www.dropbox.com/sh/ok8x0rvwu0i3eox/hu1HVNed_w#f:jr%03d.jpg
 
 (defn fetch-url [url]
-  (html/html-resource (io/as-url url)))
+  (html/html-resource (io/as-url url))
+  (println (format "Retrieved url [%s" url)))
 
 (defn extract-list-of-imgs [resource]
   (let [resource resource]
@@ -32,8 +33,11 @@
     [(map get-image-id-from-url list-of-img-urls)
      list-of-img-urls]))
 
+(defn make-keys [vector]
+  (map #(keyword (str %)) vector))
+
 (defn make-map [two-arrays]
-  (apply hash-map (flatten (map vector (first two-arrays) (second two-arrays)))))
+  (apply hash-map (flatten (map vector (make-keys (first two-arrays)) (second two-arrays)))))
 
 (defn list-item [index map-of-img-urls]
   (let [img-url (get map-of-img-urls index)]
