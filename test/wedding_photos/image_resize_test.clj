@@ -5,5 +5,3 @@
            [java.awt.image.BufferedImage]
            [java.io.ByteArrayOutputStream]))
 
-(fact "Numbers can be bigger than other numbers"
-  (> 3 4) => falsey)

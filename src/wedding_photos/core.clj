@@ -13,12 +13,15 @@
 
 (def jim-and-romina (set/intersection (set jim-selected) (set romina-selected)))
 
+
 (def final-selection [8 16 54 56 59 66 79 97 98 106 110 112 113 114 115 117 118 123 126 127 130 131 132 138 140 142 151 156 157 159 166 189 192 198 206 214 215 217 218 220 222 225 233 234 237 238 244 253 254 271 276 300 311 313 316 321 357 358 360 362 363 366 367 368 373 375])
 
 (def romina-not-selected (apply disj (set romina-selected) jim-and-romina))
 (def jim-not-selected (apply disj (set jim-selected) jim-and-romina))
 
+;; add 6595 6600  7028  7094
 
+;; And 101 instead of 98 add 115, 120, 232, 280, 318, 319, 338
 
 ;;(img/create-page (img/web-page (img/fetch-url img/*gallery-url*) (sort jim-and-romina)) "wedding-pictures.html")
  
